@@ -1,0 +1,31 @@
+from random import shuffle
+
+pop = ["Resto", "Zerri", "Kacpre", "Klaudia", "Olicz", "Wariax", "Kasia"]
+
+prev = {
+    "Resto": "Klaudia",
+    "Zerri": "Olicz", 
+    "Kacpre": "Kasia", 
+    "Klaudia": "Wariax", 
+    "Olicz": "Zerri", 
+    "Wariax": "Resto", 
+    "Kasia": "Kacpre", 
+    }
+
+def generate_assingments(previous_assingments, coders):
+    
+    new_ass = dict(previous_assingments)
+    shuffle(coders)
+    i = 0
+    
+    
+    for people in previous_assingments:
+        if coders[i] != previous_assingments[people] and previous_assingments.items() != new_ass.items() and new_ass.items(people) != dict(map(reversed, new_ass.items(people))): 
+            new_ass[people] = coders[i]
+            i += 1
+
+
+    print(new_ass)
+
+
+generate_assingments(prev, pop)
