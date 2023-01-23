@@ -19,9 +19,9 @@ def generate_assingments(previous_assingments, coders):
     i = 0
     
     
-    for people in previous_assingments:
-        if coders[i] != previous_assingments[people] and previous_assingments.items() != new_ass.items() and new_ass.items(people) != dict(map(reversed, new_ass.items(people))): 
-            new_ass[people] = coders[i]
+    for key, value in previous_assingments.items():
+        if previous_assingments[key] != coders[i] and previous_assingments[value] != coders[i] and new_ass.items() != dict(map(reversed, new_ass.items())):   
+            new_ass[key] = coders[i]
             i += 1
 
 
